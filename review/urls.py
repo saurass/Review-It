@@ -3,7 +3,7 @@ from .views import create,login,logout,homepage,add_service_form
 from .views import myservice,admin_login,auth,main
 from .views import myservice,admin_login,auth,admin_home, add_category
 from .views import service_category, service_question, delete_category
-
+from .views import search
 from .views import reject_service,accept_service
 
 urlpatterns = [
@@ -21,7 +21,7 @@ urlpatterns = [
     path('add_category', add_category),
     path('delete_category', delete_category),
     path('admin_question', service_question),
-
+    path('search',search),
     path('accept_service', accept_service),
     path('reject_service', reject_service),
 ]

@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate,login
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
-
+from django.http import JsonResponse
 # Create your views here.
 def main(request):
 
@@ -229,3 +229,12 @@ def delete_category(request):
 def service_question(request):
 	return render(request, 'service_question_home.html')
 	# return HttpResponse('hey there crud for service category questions here !!!')
+def search(request):
+	if request.method =='POST':
+		search = request.POST['Search']
+		print(search)
+		result = Org.objects.filter(company__contains=search)
+		print(result)	
+		values_list = list(result.values('id','company'))
+		return JsonResponse(values_list,safe=False)
+		
