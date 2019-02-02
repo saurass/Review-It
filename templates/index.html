@@ -238,6 +238,9 @@
       </div>
     </section>
     <script type="text/javascript">
+        $('#res46').hover(function(){
+        console.log("ee");
+        });
       $("body").click(function(){
          $("#myList").empty();
       });
@@ -257,12 +260,28 @@
         $("#myList").empty();
         for(var i = 0 ; i < values_list.length ; i++){
            var p = document.getElementById('myList');
-            var newElement = document.createElement('p');
-           newElement.setAttribute('id', 'res');
+            var newElement = document.createElement('a');
+            var newElement1 = document.createElement('br');
+           newElement.setAttribute('id', 'res'+carriers[i].id);
+           var t = "#res"+carriers[i].id;
+           console.log(t);
+           newElement.setAttribute('href', 'google.com');
            newElement.innerHTML = carriers[i].company;
            p.appendChild(newElement);
-        // document.getElementById('myList').innerHTML = carriers[i].company;
+           p.appendChild(newElement1);
+           <!--p.appendchild(newElement1);-->
+           data = carriers[i].company;
+        <!--$('#'+carriers[i].id).hover(data, function(e) {-->
+        <!--console.log(e.data);-->
+            <!--});-->
+
+            $(t).hover(function(){
+            $('#search').val(data);
+            <!--$("#myList").empty();-->
+            });
+
         }
+
       }
       
   });
