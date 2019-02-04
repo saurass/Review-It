@@ -34,5 +34,5 @@ class Category(models.Model):
     name = models.CharField(max_length=200)
 
 class Question(models.Model):
-	category_id = models.CharField(max_length=200)
-	question = models.TextField(max_length = 500)
+	Category_id = models.CharField(max_length=200)
+	Question = models.TextField(max_length = 500)
