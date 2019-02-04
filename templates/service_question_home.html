@@ -40,5 +40,20 @@
         <span class="navbar-brand mb-0 h1">Review It</span>
         <span>Hey Admin</span>
     </nav><br><br>
+    
+     <div class="container">
+<div class="col-6" style="margin-left:40%">
+<form action="/admin_question" style="margin-left: 200px;" method="POST" name='form'>
+    {% csrf_token %}
+    <label> Service Category</label>
+    <input type="text" class="form-control" placeholder="Category"   value="{{object.Category_id}}" name="category_id">
+    <label>Question:</label><br>
+    <textarea class="form-control" rows="6" placeholder="Questions" name="question" value="{{object.Question}}"></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary" name="sub" >Submit</button>
+</form>
+</div>
+</div>
+
 
 </body>
