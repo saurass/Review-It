@@ -40,5 +40,32 @@
         <span class="navbar-brand mb-0 h1">Review It</span>
         <span>Hey Admin</span>
     </nav><br><br>
+    
+     <div class="container">
+<div class="col-6" style="margin-left:40%">
+<form action="/admin_question" style="margin-left: 200px;" method="POST" name='form'>
+    {% csrf_token %}
+    <label> Service Category</label>
+    <br>
+    <select style="width:300px"name="Category_id">
+        <br>
+    <option value="sell on amazon">sell on amazon</option>
+    <option value="amazon global business">amazon global business</option>
+    <option value="sell on flipkart">sell on flipkart</option>
+    <option value="paytm booking">paytm booking</option>
+    <option value="reliance net"> reliance net</option>
+    <option value="samsung 24x7 help"> samsung 24x7 help</option>
+
+  </select><br><br>
+    <label>Question:</label><br>
+    <textarea class="form-control" rows="6" placeholder="Questions" name="Question" value="{{object.Question}}"></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary" name="sub" >Submit</button>
+    <br><br>
+    <input type="submit" class="btn btn-primary btn-block" max-width="30%"  value="Add Another Question">
+</form>
+</div>
+</div>
+
 
 </body>

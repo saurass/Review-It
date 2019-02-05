@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,HttpResponse
-from .forms import login_form_org,login_form,add_service
+from .forms import login_form_org,login_form,add_service,service
 from .forms import admin_login_form,auth_form
 from .models import Org,Services,Admin,Question,Category
 import random
@@ -227,6 +227,15 @@ def delete_category(request):
 	return redirect('/admin_service_category')
 
 def service_question(request):
+    form = service(request.POST)
+
+	if(request.method =='POST'):
+		if form.is_valid():
+			Category_id = form.cleaned_data['Category_id']
+
+			Question = form.cleaned_data['Question']
+			form.save()
+
 	return render(request, 'service_question_home.html')
 	# return HttpResponse('hey there crud for service category questions here !!!')
 def search(request):
