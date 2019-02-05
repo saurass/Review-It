@@ -46,11 +46,23 @@
 <form action="/admin_question" style="margin-left: 200px;" method="POST" name='form'>
     {% csrf_token %}
     <label> Service Category</label>
-    <input type="text" class="form-control" placeholder="Category"   value="{{object.Category_id}}" name="category_id">
+    <br>
+    <select style="width:300px"name="Category_id">
+        <br>
+    <option value="sell on amazon">sell on amazon</option>
+    <option value="amazon global business">amazon global business</option>
+    <option value="sell on flipkart">sell on flipkart</option>
+    <option value="paytm booking">paytm booking</option>
+    <option value="reliance net"> reliance net</option>
+    <option value="samsung 24x7 help"> samsung 24x7 help</option>
+
+  </select><br><br>
     <label>Question:</label><br>
-    <textarea class="form-control" rows="6" placeholder="Questions" name="question" value="{{object.Question}}"></textarea>
+    <textarea class="form-control" rows="6" placeholder="Questions" name="Question" value="{{object.Question}}"></textarea>
     <br>
     <button type="submit" class="btn btn-primary" name="sub" >Submit</button>
+    <br><br>
+    <input type="submit" class="btn btn-primary btn-block" max-width="30%"  value="Add Another Question">
 </form>
 </div>
 </div>
