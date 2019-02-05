@@ -1,6 +1,6 @@
 from django import forms
 from .models import Org,Services,Admin_login
-from .models import Admin
+from .models import Admin, Question
 class login_form_org(forms.ModelForm):
 	class Meta:
 		model = Org

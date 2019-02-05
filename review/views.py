@@ -227,9 +227,8 @@ def delete_category(request):
 	return redirect('/admin_service_category')
 
 def service_question(request):
-    form = service(request.POST)
-
-	if(request.method =='POST'):
+	if request.method == 'POST':
+		form = service(request.POST)
 		if form.is_valid():
 			Category_id = form.cleaned_data['Category_id']
 
