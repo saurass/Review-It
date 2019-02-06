@@ -237,4 +237,7 @@ def search(request):
 		print(result)	
 		values_list = list(result.values('id','company'))
 		return JsonResponse(values_list,safe=False)
+
+def cus_review(request):
+	return HttpResponse("ee")
 		
