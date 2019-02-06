@@ -25,3 +25,8 @@ class admin_login_form(forms.Form):
 
 class auth_form(forms.Form):
 	otp_test = forms.CharField(max_length=10)
+	
+class service(forms.ModelForm):
+	class Meta:
+		model = Question
+		fields = ('Category_id','Question')
