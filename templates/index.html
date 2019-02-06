@@ -12,8 +12,12 @@
     <style type="text/css">
       #myList{
         position:absolute;
-        margin-left: 240px;
+        margin-left: 192px;
       }
+      a {
+    text-decoration: none;
+    color: #b61c1c; /* For Example */
+}
     </style>
     <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -95,13 +99,22 @@
             <hr class="light my-4">
             <p class="text-faded mb-4">Search for Organizations and start Reviewing</p>
             <div class="d-flex justify-content-center col-lg-12 col-sm-10">
-                  <form method="POST" action="">
+                <form class="form-inline" action="/review" method="POST">
                     {% csrf_token %}
-                  <!-- <input  type="text" id="search" name="" placeholder="Search..."> -->
-                  <input class="" type="text" name="" placeholder="Search..." id="search" autocomplete="off"><br>
-                  <!-- <input type="submit" class="btn btn-success" name="sub" value="Search"> -->
-                  <!-- <a href="#" class="search_icon"><i class="fas fa-search"></i></a> -->
-                  </form>
+  <div class="form-group">
+    <!--<label for="search">Search</label>-->
+    <input type="text" class="form-control" id="search" autocomplete="off">
+  </div>&nbsp;&nbsp;
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+                  <!--<form method="POST" action="">-->
+                    <!--{% csrf_token %}-->
+                  <!--&lt;!&ndash; <input  type="text" id="search" name="" placeholder="Search..."> &ndash;&gt;-->
+                  <!--<input class="" type="text" name="" placeholder="Search..." id="search" autocomplete="off"><br>-->
+                  <!--&lt;!&ndash; <input type="submit" class="btn btn-success" name="sub" value="Search"> &ndash;&gt;-->
+                  <!--&lt;!&ndash; <a href="#" class="search_icon"><i class="fas fa-search"></i></a> &ndash;&gt;-->
+                  <!--</form>-->
+
               </div>
               <div id="myList"  class="col-4" style="background-color: white;">
                    
@@ -278,6 +291,7 @@
             $(t).hover(function(){
             $('#search').val(data);
             <!--$("#myList").empty();-->
+            <!--$(t).prop("class",'btn btn-primary btn-lg active');-->
             });
 
         }
